@@ -1,0 +1,17 @@
+/* Auto layout */
+aside {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 15px 24px;
+  gap: 12px;
+
+  position: absolute;
+  width: 72px;
+  height: 1077px;
+  left: 0px;
+  top: 68px;
+
+  background: #ffffff;
+  box-shadow: 4px 0px 20px rgba(106, 106, 106, 0.1);
+}
