@@ -1,13 +1,10 @@
-import Input from "../components/Input";
-import InputSelect from "../components/InputSelect";
-import Checkbox from "../components/Checkbox";
 import Button from "../components/Button";
 import FormContainer_ from "./detailLayout/FormContainer_";
 import Sidebar from "./detailLayout/Sidebar";
 import Navbar from "./detailLayout/Navbar";
 import { Link } from "react-router-dom";
 
-function FormLayoutNew() {
+function FormLayoutNew({ children }) {
   return (
     <>
       <Sidebar />
@@ -29,79 +26,7 @@ function FormLayoutNew() {
         </div>
       </div>
 
-      <div className="flex form-control card-body container-md border-2 rounded-lg shadow mx-auto h-full">
-        <FormContainer_ />
-        <div className="card-title">Informasi Ruang Meeting</div>
-        <div className="mt-2 pb-6 border-b-4 border-b-gray-300">
-          <div className="flex flex-nowrap gap-[20px]">
-            <InputSelect label="Unit" placeholder="Pilih Unit" option="" />
-            <InputSelect
-              label="Ruang Meeting"
-              placeholder="Pilih Ruang Meeting"
-              option=""
-            />
-          </div>
-          <div className="flex flex-nowrap mt-4">
-            <Input
-              label="Kapasitas"
-              placeholder="0"
-              type="number"
-              disabled
-              className="disabled:opacity-75"
-            />
-          </div>
-        </div>
-        <div className="card-title mt-6">Informasi Rapat</div>
-        <div className="mt-2 pb-6 border-b-4 border-b-gray-300">
-          <div className="flex flex-nowrap gap-[20px]">
-            <Input label="Tanggal Rapat" />
-            <InputSelect
-              label="Waktu Mulai"
-              placeholder="Pilih Waktu Mulai"
-              option=""
-            />
-            <InputSelect
-              label="Waktu Selesai"
-              placeholder="Pilih Waktu Selesai"
-              option=""
-            />
-          </div>
-          <div className="flex flex-nowrap mt-2">
-            <Input
-              label="Jumlah Peserta"
-              placeholder="Masukkan Jumlah Peserta"
-              type="number"
-              disabled
-              className="disabled:opacity-75"
-            />
-          </div>
-          <div className="flex flex-nowrap mt-2">
-            <div className="form-control">
-              Jenis Konsumsi
-              <Checkbox label="Snack Siang" />
-              <Checkbox label="Makan Siang" />
-              <Checkbox label="Snack Sore" />
-            </div>
-          </div>
-          <div className="flex flex-nowrap mt-2">
-            <Input
-              label="Nominal Konsumsi"
-              placeholder="0"
-              type="number"
-              disabled
-              className="disabled:opacity-100"
-            />
-          </div>
-        </div>
-        <div className="flex flex-row-reverse mt-2">
-          <Button type="submit" label="Simpan" />
-          <Button
-            type="button"
-            label="Batal"
-            className="mr-2 text-red-500 bg-white"
-          />
-        </div>
-      </div>
+      <FormContainer_>{children}</FormContainer_>
     </>
   );
 }
